@@ -1,3 +1,7 @@
+Relevant docs:
+
+* https://hub.docker.com/_/nginx/
+
 Steps to build and run:
 
 ```
