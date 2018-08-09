@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Siempre Hay Primavera</title>
+		<link href="styles.css" rel="stylesheet">
+		<script src="blog.js"></script>
+	</head>
+	<body>
+		<h1>Siempre Hay Primavera</h1>
+		<div id="content"></div>
+		<script>
+			getContent('b-content.html').then(
+				content => {
+					const contentNode = document.getElementById('content');
+					contentNode.innerHTML = content;
+				},
+				error => {
+					console.error(error);
+				});
+		</script>
+	</body>
+</html>
