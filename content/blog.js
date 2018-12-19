@@ -19,14 +19,35 @@ function showContent(filename) {
 			const contentNode = document.getElementById('content');
 			contentNode.innerHTML = content;
 		},
-		error => {
-			const contentNode = document.getElementById('content');
-			contentNode.innerHTML = "Sorry, we couldn't find what you were looking for!";
-
-			console.error(error);
-			if (error.response) {
-				console.error("Response", error.response);
-			}
-		}
+		showErrorState,
 	);
+}
+
+function loadContent() {
+	const url = new URL(location.href);
+	const path = url.pathname;
+
+	const regex = /^\/poems\/(\w+)$/;
+
+	// The match call returns an array, where the 1st index is the first parenthetical match.
+	const matches = path.match(regex);
+
+	if (!matches) {
+		showErrorState(new Error(`Unable to parse path: ${path}`));
+		return;
+	}
+
+	const content = matches[1];
+	showContent(content + ".html");
+}
+
+function showErrorState(error) {
+	const contentNode = document.getElementById('content');
+	contentNode.innerHTML = "Sorry, we couldn't find what you were looking for!";
+
+	console.error(error);
+
+	if (error.response) {
+		console.error("Response", error.response);
+	}
 }

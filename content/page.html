@@ -2,17 +2,14 @@
 <html>
 	<head>
 		<title>Siempre Hay Primavera</title>
-		<link href="styles.css" rel="stylesheet">
-		<script src="blog.js"></script>
+		<link href="/styles.css" rel="stylesheet">
+		<script src="/blog.js"></script>
 	</head>
 	<body>
 		<h1>Siempre Hay Primavera</h1>
 		<div id="content"></div>
 		<script>
-			const url = new URL(location.href);
-			const content = url.searchParams.get("content");
-
-			showContent(content + ".html");
+			loadContent();
 		</script>
 	</body>
 </html>
