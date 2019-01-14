@@ -38,7 +38,7 @@ function loadContent() {
 	}
 
 	const content = matches[1];
-	showContent(content + ".html");
+	showContent(content + ".txt");
 }
 
 function showErrorState(error) {
