@@ -13,11 +13,11 @@ const compiledFunction = pug.compileFile(contentDirectory + '/page.pug');
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/api/poems/:poemName', (req, res) => {
-	const path = contentDirectory + '/' + req.params.poemName + '.txt';
-	const fileContent = fs.readFileSync(path, 'utf8');
-	const content = compiledFunction({ poemContent: fileContent });
+	const contentFilePath = contentDirectory + '/' + req.params.poemName + '.txt';
+	const contentFileString = fs.readFileSync(contentFilePath, 'utf8');
 
-	return res.send(content);
+	const htmlString = compiledFunction({ poemContent: contentFileString });
+	return res.send(htmlString);
 });
 
 

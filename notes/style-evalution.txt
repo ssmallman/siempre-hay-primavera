@@ -1,0 +1,29 @@
+We type this into pug
+--------------------------------
+link(href='/styles.css' rel='stylesheet')
+
+
+Pug turns that into this HTML
+--------------------------------
+<link href="/styles.css" rel="stylesheet">
+
+
+We serve that HTML as part of http://localhost:3000/api/poems/a
+
+The browser interprets that <link> tag as an instruction to fetch
+a stylesheet file from a URL
+
+When the browser sees a URL like /styles.css it interprets the leading
+slash as meaning "this is a relative URL"
+
+When it needs to expand a relative URL, it takes the domain of the page
+that it's currently on (i.e., the URL you see in the address bar) as a
+prefix
+
+So it turns /styles.css into http://localhost:3000/styles.css
+
+The browser makes a request to http://localhost:3000/styles.css
+
+Express/node receive a request for the route /styles.css
+
+That route doesn't exist

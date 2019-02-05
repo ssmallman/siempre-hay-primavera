@@ -1,0 +1,36 @@
+We type this into pug
+--------------------------------
+link(href='http://localhost:8080/styles.css' rel='stylesheet')
+
+
+Pug turns that into this HTML
+--------------------------------
+<link href="http://localhost:8080/styles.css" rel="stylesheet">
+
+
+We serve that HTML as part of http://localhost:3000/api/poems/a
+
+The browser interprets that <link> tag as an instruction to fetch
+a stylesheet file from a URL
+
+The browser makes a request to http://localhost:8080/styles.css
+
+Nginx receives a request for the route /styles.css
+
+That route is fulfilled by our catchall block:
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+According to that block, requests to /path/to/blah should be fulfilled
+by reading *from disk* the file /usr/share/nginx/html/path/to/blah
+
+We've configured our Docker container to map from...
+	/usr/share/nginx/html/path/to/blah
+...to...
+	$REPO/content/path/to/blah
+
+And so, nginx fulfills the request to http://localhost:8080/styles.css
+by reading from $REPO/content/styles.css
