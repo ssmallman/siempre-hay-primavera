@@ -17,6 +17,9 @@ docker images
 # To remove an image:
 docker rmi <imageId>
 
+# To create a bridge network:
+docker network create <networkName>
+
 # To run bash in a running container:
 docker exec -it <containerName> bash
 ```
