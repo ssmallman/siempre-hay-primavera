@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api-server:
+    build: ./api-server
+    volumes:
+      - ./api-server/content:/data/api-server/content:ro
+
+  static-server:
+    build: ./static-server
+    ports:
+      - "9999:80"
+    volumes:
+      - ./static-server/content:/usr/share/nginx/html:ro

@@ -11,6 +11,13 @@ const contentDirectory = config.contentDirectory;
 
 const compiledFunction = pug.compileFile(contentDirectory + '/page.pug');
 
+// Set options for Marked based on this documentation:
+// https://marked.js.org/#/USING_ADVANCED.md#options
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+});
+
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/api/poems/:poemName', (req, res) => {

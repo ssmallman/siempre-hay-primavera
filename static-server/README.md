@@ -1,8 +1,12 @@
-Steps to build and run:
+Steps to build and run the static-server:
+(Note: We don't need to do this anymore! Try using docker-compose instead!)
 
 ```
 # Navigate to project root.
 cd /path/to/siempre-hay-primavera
+
+# Make sure that the `internal` network exists.
+docker network create internal
 
 # Builds the image and names it "static-server-image".
 docker build -t static-server-image static-server

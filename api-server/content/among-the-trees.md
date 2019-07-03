@@ -1,4 +1,4 @@
-When I am among the trees, 
+When I am among the trees,
 especially the willows and the honey locust,
 equally the beech, the oaks and the pines,
 they give off such hints of gladness.
@@ -7,7 +7,7 @@ I would almost say that they save me, and daily.
 I am so distant from the hope of myself,
 in which I have goodness, and discernment,
 and never hurry through the world
- but walk slowly, and bow often.
+but walk slowly, and bow often.
 
 Around me the trees stir in their leaves
 and call out, "Stay awhile."
