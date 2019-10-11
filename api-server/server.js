@@ -3,6 +3,8 @@ const express = require('express');
 const fs = require('fs');
 const marked = require('marked');
 const pug = require('pug');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 
 const app = express();
 
@@ -29,10 +31,13 @@ app.get('/api/poems/:poemName', (req, res) => {
 
 	const metadata = JSON.parse(contentMetadataString);
 
+	const element = React.createElement('h1', {}, 'Hello from React!');
+
 	const htmlString = compiledFunction({ 
 		poemContent: marked(contentFileString),
 		title: metadata.title,
 		createdDate: metadata.createdDate,
+		htmlContent: ReactDOMServer.renderToStaticMarkup(element),
 	});
 	
 	return res.send(htmlString);
