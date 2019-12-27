@@ -4,7 +4,7 @@ services:
   api-server:
     build: ./api-server
     volumes:
-      - ./api-server/content:/data/api-server/content:ro
+      - ./api-server/content:/home/node/content:ro
 
   static-server:
     build: ./static-server

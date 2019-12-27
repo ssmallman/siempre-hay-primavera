@@ -2,7 +2,8 @@
   "name": "siempre-hay-primavera",
   "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "gulp prepare",
+    "start": "node target/server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -10,5 +11,13 @@
     "pug": "^2.0.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/register": "^7.7.7",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0-beta.2"
   }
 }

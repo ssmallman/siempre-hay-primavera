@@ -1,0 +1,6 @@
+# Source files
+src/
+
+# Build files
+.babelrc
+gulpfile.babel.js

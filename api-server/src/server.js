@@ -1,10 +1,10 @@
-const config = require('./config');
-const express = require('express');
-const fs = require('fs');
-const marked = require('marked');
-const pug = require('pug');
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
+import config from './config';
+import express from 'express';
+import fs from 'fs';
+import marked from 'marked';
+import pug from 'pug';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 
 const app = express();
 
@@ -31,7 +31,7 @@ app.get('/api/poems/:poemName', (req, res) => {
 
 	const metadata = JSON.parse(contentMetadataString);
 
-	const element = React.createElement('h1', {}, 'Hello from React!');
+	const element = <h1>Hello from React!</h1>;
 
 	const htmlString = compiledFunction({ 
 		poemContent: marked(contentFileString),
