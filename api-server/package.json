@@ -2,8 +2,9 @@
   "name": "siempre-hay-primavera",
   "version": "0.0.1",
   "scripts": {
-    "prepare": "gulp prepare",
-    "start": "node target/server.js"
+    "prepare": "gulp",
+    "start": "node target/server.js",
+    "clean": "gulp clean"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -17,7 +18,9 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/register": "^7.7.7",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0-beta.2"
+    "gulp-babel": "^8.0.0-beta.2",
+    "webpack-stream": "^5.2.1"
   }
 }
